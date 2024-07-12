@@ -74,3 +74,32 @@ const intervalId = setInterval(() => {
     clearInterval(intervalId);
   }
 }, 500);
+
+// Switch
+// Evitar usarlo a no ser que sea la única opción posible
+// Funciona como el if, else if, else
+// Si no se escribe break, se ejecutan todas las líneas. Es para que el código deje de ejecutarse cuando se cumple una condición
+
+const number = 4;
+
+switch (number) {
+  case 1:
+    console.log('El número es 1');
+    break;
+
+  case 2:
+    console.log('El número es 2');
+    break;
+
+  case 3:
+    console.log('El número es 3');
+    break;
+
+  case 4:
+    console.log('El número es 4');
+    break;
+
+  default:
+    console.log('El número es mayor de 4');
+    break;
+}
