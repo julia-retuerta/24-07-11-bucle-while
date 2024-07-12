@@ -16,16 +16,61 @@ import '../scss/styles.scss';
 
 // Crea una función que rellene un array con 15 números del 1 al 20 que no se repitan
 
+// const arrayOfNumbers = [];
+
+// const notRepeatedNumbers = () => {
+//   while (arrayOfNumbers.length < 15) {
+//     const randomNumber = Math.ceil(Math.random() * 20);
+//     if (!arrayOfNumbers.includes(randomNumber)) {
+//       arrayOfNumbers.push(randomNumber);
+//     }
+//   }
+//   console.log(arrayOfNumbers);
+// };
+
+// notRepeatedNumbers();
+
+// Recursividad -> función que se llama a sí misma
+
+const countDown = number => {
+  if (number < 0) return;
+
+  console.log(number);
+
+  return countDown(number - 1);
+};
+
+countDown(10);
+
+// Mismo ejercicio hecho con recursividad
+
 const arrayOfNumbers = [];
 
 const notRepeatedNumbers = () => {
-  while (arrayOfNumbers.length < 15) {
-    const randomNumber = Math.ceil(Math.random() * 20);
-    if (!arrayOfNumbers.includes(randomNumber)) {
-      arrayOfNumbers.push(randomNumber);
-    }
+  if (arrayOfNumbers.length === 15) {
+    console.log(arrayOfNumbers);
+    return;
   }
-  console.log(arrayOfNumbers);
+
+  const randomNumber = Math.ceil(Math.random() * 20);
+
+  if (!arrayOfNumbers.includes(randomNumber)) {
+    arrayOfNumbers.push(randomNumber);
+  }
+
+  notRepeatedNumbers();
 };
 
 notRepeatedNumbers();
+
+// Consejos para el bingo
+
+let counter = 0;
+
+const intervalId = setInterval(() => {
+  console.log(counter);
+  counter++;
+  if (counter > 10) {
+    clearInterval(intervalId);
+  }
+}, 500);
